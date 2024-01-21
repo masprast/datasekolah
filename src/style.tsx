@@ -36,6 +36,17 @@ const style = StyleSheet.create({
     backgroundColor: '#fafafa',
     marginVertical: 10,
   },
+  dropdownDisabled: {backgroundColor: '#e2e2e2'},
+  dropdownContainer: {
+    position: 'absolute',
+    borderColor: '#e4e4e4',
+    backgroundColor: '#fafafa',
+    width: '100%',
+    overflow: 'hidden',
+    zIndex: 1000,
+    marginVertical: 10,
+    elevation: 8,
+  },
   dropdownPlaceholder: {
     color: '#c7c7c8',
   },
