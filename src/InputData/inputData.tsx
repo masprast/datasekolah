@@ -5,6 +5,7 @@ import DropDownPicker from 'react-native-dropdown-picker';
 
 import {fetchProvinsi, fetchKotaKab} from './wilayahHelper';
 import style from '../style';
+import SimpanData from '../dbhelper/helper';
 
 enum TipeSekolah {
   Negeri = 'Negeri',
@@ -49,6 +50,8 @@ const Form = () => {
   const [provinsi, setProvinsi] = useState('0');
   const [bukaKotaKab, setBukaKotaKab] = useState(false);
   const [disKotaKab, setDisKotaKab] = useState(true);
+  // const [imagePath, setImagePath] = useState('');
+
   const tipe = [
     {label: TipeSekolah.Negeri, value: 'Negeri'},
     {label: TipeSekolah.Swasta, value: 'Swasta'},
@@ -68,7 +71,6 @@ const Form = () => {
       ),
     );
     setBukaProvinsi(true);
-    console.log('daftarProvinsi', daftarProvinsi);
   }
   function isiDaftarKotaKab(id: string) {
     fetchKotaKab(id).then(d =>
@@ -77,10 +79,18 @@ const Form = () => {
       ),
     );
     setBukaKotaKab(true);
-    console.log('daftarKotaKab', daftarKotaKab);
   }
-  // const [daftarKotaKab, setDaftarKotaKab] = useState<KotaKab[]>();
-  // const [kotakab, setKotakab] = useState<KotaKab>();
+
+  // function pilihImage() {
+  //   let option = {
+  //     title: 'Pilih gambar/foto',
+  //     // customButtons: [
+  //     //   {name: 'button_id_1', title: 'CustomButton 1'},
+  //     //   {name: 'button_id_2', title: 'CustomButton 2'},
+  //     // ],
+  //     storageOptions: {skipBackup: true, path: 'images'},
+  //   };
+  // }
 
   return (
     <View style={style.container}>
@@ -198,7 +208,6 @@ const Form = () => {
               }}
               onChangeValue={v => {
                 const id = daftarProvinsi.find(d => d.label === v)?.key ?? '';
-                console.log(id);
                 setProvinsi(id);
                 setDisKotaKab(false);
               }}
@@ -334,9 +343,10 @@ const Form = () => {
         <View>
           <TouchableOpacity
             style={style.button}
-            onPress={handleSubmit(data =>
-              Alert.alert('Data Sekolah:', JSON.stringify(data)),
-            )}>
+            onPress={handleSubmit(data => {
+              Alert.alert('Data Sekolah:', JSON.stringify(data));
+              SimpanData(data);
+            })}>
             <Text style={style.teksbutton}>SUBMIT</Text>
           </TouchableOpacity>
         </View>

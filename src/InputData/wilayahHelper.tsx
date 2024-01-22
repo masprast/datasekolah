@@ -14,15 +14,12 @@ interface KotaKab {
 }
 
 async function fetchProvinsi(): Promise<Provinsi[]> {
-  //   const respon = await fetch('https://api.cahyadsn.com/provinces');
   const respon = await axios.get('https://api.cahyadsn.com/provinces');
   const data = respon.data.data;
-  //   console.log('data', data);
   return data;
 }
 
 async function fetchKotaKab(id: string): Promise<KotaKab[]> {
-  //   const respon = await fetch('https://api.cahyadsn.com/regencies/' + id);
   const respon = await axios.get('https://api.cahyadsn.com/regencies/' + id);
   const data = respon.data.data;
   return data;

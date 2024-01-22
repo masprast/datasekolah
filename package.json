@@ -10,11 +10,17 @@
     "test": "jest"
   },
   "dependencies": {
+    "@types/node": "^20.11.5",
     "axios": "^1.6.5",
+    "express": "^4.18.2",
+    "mysql2": "^3.7.1",
     "react": "18.2.0",
     "react-hook-form": "^7.49.3",
     "react-native": "0.73.2",
-    "react-native-dropdown-picker": "^5.4.6"
+    "react-native-dropdown-picker": "^5.4.6",
+    "react-native-image-picker": "^7.1.0",
+    "react-native-modal": "^13.0.1",
+    "ts-node": "^10.9.2"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
@@ -24,6 +30,7 @@
     "@react-native/eslint-config": "0.73.2",
     "@react-native/metro-config": "0.73.3",
     "@react-native/typescript-config": "0.73.1",
+    "@types/express": "^4.17.21",
     "@types/react": "^18.2.6",
     "@types/react-test-renderer": "^18.0.0",
     "babel-jest": "^29.6.3",
