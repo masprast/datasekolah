@@ -5,7 +5,7 @@ import DropDownPicker from 'react-native-dropdown-picker';
 
 import {fetchProvinsi, fetchKotaKab} from './wilayahHelper';
 import style from '../style';
-import SimpanData from '../dbhelper/helper';
+// import SimpanData from '../dbhelper/helper';
 
 enum TipeSekolah {
   Negeri = 'Negeri',
@@ -345,7 +345,7 @@ const Form = () => {
             style={style.button}
             onPress={handleSubmit(data => {
               Alert.alert('Data Sekolah:', JSON.stringify(data));
-              SimpanData(data);
+              // SimpanData(data);
             })}>
             <Text style={style.teksbutton}>SUBMIT</Text>
           </TouchableOpacity>
